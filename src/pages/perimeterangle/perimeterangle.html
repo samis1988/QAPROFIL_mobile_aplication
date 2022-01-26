@@ -1,0 +1,62 @@
+<!--
+  Generated template for the PerimeteranglePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> <b>Prepainted Perimeter Angle</b></ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <img src="assets/img/qaprofil/p_a_alum.png"  #myImage (click)="presentImage(myImage)" />
+       
+  <ion-card-content>
+      <p><font face="Times New Roman" color="black" size="3">Item's Name:</font> <font   face="Arial Black" color="black" size="3"> Perimeter Angle</font></p> 
+      <p><font face="Times New Roman" color="black" size="3">Item's Code:</font> <font   face="Arial Black" color="black" size="3">QSGPA22-3.6-40MWC</font></p> 
+     
+       
+      <p><font face="Times New Roman" color="black" size="3">Perimeter Angle : Fixed at the perimeter of the desired area to level and carry the edges of the Aluminum strips of the false ceilings.</font></p> 
+    <p>
+      <font face="Times New Roman" color="black" size="4">* Customise your product :</font>
+    </p>
+    <ion-list>
+      <ion-item>
+        <ion-label>Colors</ion-label>
+        <ion-select [(ngModel)]="color" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let color of colors" value="{{color.code}}">{{color.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Width</ion-label>
+        <ion-select [(ngModel)]="width" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let width of widths" value="{{width.value}}">{{width.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thickness</ion-label>
+        <ion-select [(ngModel)]="thicknes" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let t of thinkness" value="{{t.value}}">{{t.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item no-lines class="itemform">
+        <ion-label>Qty</ion-label>
+        <ion-input class="inputClass" id="quantity" name="quantity" type="number" [(ngModel)]="quantity" required="true" clearInput=true min="0"
+           placeholder="Enter a quantity ...">
+        </ion-input>
+     </ion-item>
+    </ion-list>
+  </ion-card-content>
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="addToCart()">
+      <ion-icon name="cart"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

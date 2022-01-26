@@ -1,0 +1,37 @@
+ 
+
+<ion-header >
+  <ion-navbar color="primary" >
+          
+    <ion-title  face="Cambria" color="white">Gypsum Ceilings & Partitions Systems</ion-title>
+          
+        
+  </ion-navbar>
+</ion-header>
+
+
+
+  <style>
+.masters {
+ 
+  /* background: url('assets/img/steel.jpg') repeat ;*/
+  background-color: white;
+}
+ 
+</style>
+
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let p of pages" (click)="goToSecond(p.component)">
+      <ion-thumbnail item-start>
+        <img src="{{p.image}}">
+      </ion-thumbnail>
+      <h2>{{p.title}}</h2>
+      <p>Gypsum Ceilings & Partitions Systems</p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,88 @@
+<ion-header no-border>
+
+   <ion-navbar color="primary" no-border>
+      <ion-title color="white">Register</ion-title>
+   </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+   <ion-content [fullscreen]="true" class="back">
+      <div class="banner">
+         <img src="../assets/img/banner.svg" />
+
+         <div class="reg">
+            <div class="text-center">
+               <img src="../assets/img/logo.png">
+            </div>
+            <div>
+
+               <!--(ngSubmit)="sigin(this.requestName,this.requestEmail,this.requestMobile,this.requestDescription)"-->
+               <div padding-top>
+                  <form [formGroup]="exampleForm">
+
+                     <ion-list no-lines>
+                        <ion-item no-lines class="itemform">
+                           <ion-input class="inputClass" id="nameInput" formControlName="name" name="name" type="text"
+                              placeholder="Enter a Name ...">
+                           </ion-input>
+                        </ion-item>
+                        <ion-row *ngIf="exampleForm.controls.name.invalid && exampleForm.controls.name.dirty">
+                           <ion-col>
+                              <span class="error-txt">Please enter a valid Name</span>
+                           </ion-col>
+                        </ion-row>
+                        <p></p>
+
+
+                        <ion-item no-lines class="itemform">
+                           <ion-input class="inputClass" id="nameInput" formControlName="email" type="email"
+                              name="email" placeholder="Enter a Email ...">
+                           </ion-input>
+                        </ion-item>
+                        <ion-row *ngIf="exampleForm.controls.email.invalid && exampleForm.controls.email.dirty">
+                           <ion-col>
+                              <span class="error-txt">Please enter a valid email</span>
+                           </ion-col>
+                        </ion-row>
+                        <p></p>
+
+
+                        <ion-item no-lines class="itemform">
+                           <ion-input class="inputClass" id="nameInput" formControlName="phone" name="phone"
+                              type="number" placeholder="Enter a mobile ...">
+                           </ion-input>
+                        </ion-item>
+                        <ion-row *ngIf="exampleForm.controls.phone.invalid && exampleForm.controls.phone.dirty">
+                           <ion-col>
+                              <span class="error-txt">Please enter a valid phone</span>
+                           </ion-col>
+                        </ion-row>
+                        <p></p>
+                        <ion-item no-lines class="itemform">
+                           <ion-input class="inputClass" id="nameInput" formControlName="password" name="password"
+                              type="password" placeholder="Enter a Password ...">
+                           </ion-input>
+                        </ion-item>
+                        <ion-row *ngIf="exampleForm.controls.password.invalid && exampleForm.controls.password.dirty">
+                           <ion-col>
+                              <span class="error-txt">Please enter a valid password</span>
+                           </ion-col>
+                        </ion-row>
+                        <p></p>
+
+                        <button ion-button color="secondary" text-center block [disabled]="exampleForm.invalid"
+                           (click)="sigin()">Register</button>
+
+
+                     </ion-list>
+
+                  </form>
+               </div>
+            </div>
+            <div class="text-center">
+               <h6 class="register"> already have an account!</h6>
+            </div>
+         </div>
+      </div>
+   </ion-content>

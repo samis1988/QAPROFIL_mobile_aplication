@@ -1,0 +1,73 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.+",
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-backbutton": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-document-viewer": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-file-opener2": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "mx.ferreyra.callnumber": {
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    },
+    "cordova-plugin-email-composer": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "qaprofil.com.qa"
+    }
+  },
+  "dependent_plugins": {}
+}

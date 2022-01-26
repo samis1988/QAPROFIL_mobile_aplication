@@ -1,0 +1,116 @@
+<!--
+  Generated template for the ResetpwdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="primary" no-border>
+    <ion-title color="white">Reset Password</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- (submit)="doSignup()"-->
+<ion-content>
+  <ion-content [fullscreen]="true" class="back">
+    <div class="banner" *ngIf="isCode==false && isCheck==false">
+      <img src="../assets/img/banner.svg" />
+
+      <div class="search">
+        <div class= "text-center">   
+           <img src="../assets/img/logo.png">  
+        </div>
+        <form  [formGroup]="exampleForm">
+          <ion-list  no-lines padding>
+      
+            <ion-item  no-lines class="itemform">
+              <ion-input type="email"  formControlName="email"  placeholder="Email" required></ion-input>
+            </ion-item>
+            <ion-row *ngIf="exampleForm.controls.email.invalid && exampleForm.controls.email.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid email</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <div no-lines>
+              <button ion-button color="primary" block [disabled]="exampleForm.invalid" (click)="doSend()">Send</button>
+            </div>
+          </ion-list>
+        </form> 
+      </div>
+    </div>
+    <div class="banner" *ngIf="isCode==true && isCheck==false">
+      <img src="../assets/img/banner.svg" />
+
+      <div class="search">
+        <div class= "text-center">   
+           <img src="../assets/img/logo.png">  
+        </div>
+        <form  [formGroup]="checkForm">
+          <ion-list  no-lines padding>
+      
+            <ion-item  no-lines class="itemform">
+              <ion-input type="email"  formControlName="email"  placeholder="Email" required [disabled]></ion-input>
+            </ion-item>
+            <ion-row *ngIf="checkForm.controls.email.invalid && checkForm.controls.email.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid email</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <ion-item  no-lines class="itemform">
+              <ion-input type="text"  formControlName="code" placeholder="Code" required></ion-input>
+            </ion-item>
+            <ion-row *ngIf="checkForm.controls.code.invalid && checkForm.controls.code.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid code</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <div no-lines>
+              <button ion-button color="primary" block [disabled]="checkForm.invalid" (click)="check()">Check</button>
+            </div>
+      
+          </ion-list>
+        </form> 
+      </div>
+    </div>
+    <div class="banner" *ngIf="isCode==true && isCheck==true">
+      <img src="../assets/img/banner.svg" />
+
+      <div class="search">
+        <div class= "text-center">   
+           <img src="../assets/img/logo.png">  
+        </div>
+        <form  [formGroup]="changeForm">
+          <ion-list  no-lines padding>
+      
+            <ion-item  no-lines class="itemform">
+              <ion-input type="email"  formControlName="email"  placeholder="Email" required [disabled]></ion-input>
+            </ion-item>
+            <ion-row *ngIf="changeForm.controls.email.invalid && changeForm.controls.email.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid email</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <ion-item  no-lines class="itemform">
+              <ion-input type="password"  formControlName="password" placeholder="Password" required></ion-input>
+            </ion-item>
+            <ion-row *ngIf="changeForm.controls.password.invalid && changeForm.controls.password.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid Password</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <div no-lines>
+              <button ion-button color="primary" block [disabled]="changeForm.invalid" (click)="changepwd()">Save</button>
+            </div>
+      
+          </ion-list>
+        </form> 
+      </div>
+    </div>
+</ion-content>

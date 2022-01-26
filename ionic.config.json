@@ -1,0 +1,8 @@
+{
+  "name": "Qaprofil",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}

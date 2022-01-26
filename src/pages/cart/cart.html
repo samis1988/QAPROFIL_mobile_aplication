@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>cart</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="isEmptyCart" class="empty-cart">
+    <div class="empty-results">
+      <h3 text-center>
+        <ion-icon name="cart"></ion-icon>
+      </h3>
+      <p text-center>
+        Your cart is empty
+      </p>
+    </div>
+  </div>
+  <!--<div *ngIf="!isEmptyCart" class="cart-itm-wrap">
+
+    <ion-card *ngFor="let itm of  cartItems">
+     Contents -->
+  <div *ngIf="!isEmptyCart"> 
+    <!-- Cart Product List -->
+    <ion-card *ngFor="let item of orders; let i = index">
+      
+      <ion-list no-lines>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="{{ item.image }}">
+          </ion-thumbnail>
+          <ion-row>
+          <ion-col style="text-align: right">
+            <ion-icon name="trash" color="primary" (click)="removeProduct(item, i)"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col style="text-align: left"> <h2>{{ item.product }}</h2></ion-col>
+        </ion-row>
+         
+          <ion-row>
+            <!-- Add More Product Quantity -->
+            <ion-col (click)="addQuantity(item, i)" style="text-align: left">
+              <ion-icon style="zoom:2.0;" ios="ios-add-circle" md="md-add-circle" color="secondary">
+              </ion-icon>
+            </ion-col>
+
+            <!-- Total Quantity -->
+            <ion-col class="ion-text-center" style="text-align: center">{{ item.quantity }}</ion-col>
+
+            <!-- Minus Product Quantity -->
+            <ion-col (click)="minusQuantity(item, i)" style="text-align: right">
+              <ion-icon style="zoom:2.0;" ios="ios-remove-circle" md="md-remove-circle" color="secondary"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>
+
+
+
+<ion-footer *ngIf="!isEmptyCart" class="single-footer">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="addCart" (click)="checkOut()">
+        <button round=true ion-button full color="secondary">
+          Checkout
+        </button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-footer>

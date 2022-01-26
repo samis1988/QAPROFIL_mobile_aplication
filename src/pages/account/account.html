@@ -1,0 +1,164 @@
+<!--
+  Generated template for the AccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="primary" no-border>
+    <ion-title color="white">Account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<!-- (submit)="doSignup()"-->
+
+
+  <ion-content>
+    <div class="banner" *ngIf="isConnect==false && isRegister==false">
+      <img src="../assets/img/banner.svg" />
+
+      <div class="search">
+        <div class= "text-center">   
+           <img src="../assets/img/logo.png">  
+        </div>
+        <form  [formGroup]="sginForm">
+          <ion-list  no-lines padding>
+      
+            <ion-item  no-lines class="itemform">
+              <ion-input type="email"  formControlName="email"  placeholder="Email" required></ion-input>
+            </ion-item>
+            <ion-row *ngIf="sginForm.controls.email.invalid && sginForm.controls.email.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid email</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <ion-item  no-lines class="itemform">
+              <ion-input type="password"  formControlName="password" placeholder="Password" required></ion-input>
+            </ion-item>
+            <ion-row *ngIf="sginForm.controls.password.invalid && sginForm.controls.password.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid password</span>
+              </ion-col>
+            </ion-row>
+            <p class="forget" (click)="navigateTo('ResetpwdPage')">Forgot Password?</p>
+            <div no-lines>
+              <button ion-button color="primary" block [disabled]="sginForm.invalid" (click)="doSignup()">Signup</button>
+            </div>
+      
+          </ion-list>
+        </form> 
+        <div class= "text-center">   
+          <h6 class="register" (click)="navigateTo('RegisterPage')"> Dont you have an account! register now</h6>
+       </div>
+      </div>
+    </div>
+    <div class="banner" *ngIf="isConnect==true">
+      <img src="../assets/img/Qaprofil.jpg" />
+
+      
+      <ion-card>
+        <ion-card-header>
+          <b>Welcome {{name}}</b>
+          <p class="sub">Manage your profile:</p>
+        </ion-card-header>
+         
+        <ion-list>
+          <button ion-item (click)="goToPage('ProfilePage')">
+            <ion-icon ios="ios-person" md="md-person" item-start color="secondary"></ion-icon>
+            My Profile
+          </button>
+      
+          <button ion-item (click)="goToPage('MyorderPage')">
+            <ion-icon name="archive" item-start color="secondary"></ion-icon>
+            My Orders
+          </button>
+      
+          <button ion-item (click)="goToPage('logout')">
+            <ion-icon ios="ios-exit" md="md-exit" item-start color="secondary"></ion-icon>
+            Log Out
+          </button>
+    
+        </ion-list>
+      </ion-card>
+    </div>
+    <div class="banner" *ngIf="isRegister==true && isConnect==false">
+      <img src="../assets/img/banner.svg" />
+      <div class="reg">
+         <div class="text-center">
+            <img src="../assets/img/logo.png">
+         </div>
+         <div>
+            <!--(ngSubmit)="sigin(this.requestName,this.requestEmail,this.requestMobile,this.requestDescription)"-->
+            <div padding-top>
+               <form [formGroup]="exampleForm">
+
+                  <ion-list no-lines>
+                     <ion-item no-lines class="item">
+                        <ion-input class="inputClass" id="nameInput" formControlName="name" name="name" type="text"
+                           placeholder="Enter a Name ...">
+                        </ion-input>
+                     </ion-item>
+                     <ion-row *ngIf="exampleForm.controls.name.invalid && exampleForm.controls.name.dirty">
+                        <ion-col>
+                           <span class="error-txt">Please enter a valid Name</span>
+                        </ion-col>
+                     </ion-row>
+                     <p></p>
+
+
+                     <ion-item no-lines class="item">
+                        <ion-input class="inputClass" id="nameInput" formControlName="email" type="email"
+                           name="email" placeholder="Enter a Email ...">
+                        </ion-input>
+                     </ion-item>
+                     <ion-row *ngIf="exampleForm.controls.email.invalid && exampleForm.controls.email.dirty">
+                        <ion-col>
+                           <span class="error-txt">Please enter a valid email</span>
+                        </ion-col>
+                     </ion-row>
+                     <p></p>
+
+
+                     <ion-item no-lines class="item">
+                        <ion-input class="inputClass" id="nameInput" formControlName="phone" name="phone"
+                           type="number" placeholder="Enter a mobile ...">
+                        </ion-input>
+                     </ion-item>
+                     <ion-row *ngIf="exampleForm.controls.phone.invalid && exampleForm.controls.phone.dirty">
+                        <ion-col>
+                           <span class="error-txt">Please enter a valid phone</span>
+                        </ion-col>
+                     </ion-row>
+                     <p></p>
+                     <ion-item no-lines class="item">
+                        <ion-input class="inputClass" id="nameInput" formControlName="password" name="password"
+                           type="password" placeholder="Enter a Password ...">
+                        </ion-input>
+                     </ion-item>
+                     <ion-row *ngIf="exampleForm.controls.password.invalid && exampleForm.controls.password.dirty">
+                        <ion-col>
+                           <span class="error-txt">Please enter a valid password</span>
+                        </ion-col>
+                     </ion-row>
+                     <p></p>
+
+                     <button ion-button color="secondary" text-center block [disabled]="exampleForm.invalid"
+                        (click)="sigin()">Register</button>
+
+
+                  </ion-list>
+
+               </form>
+            </div>
+         </div>
+         <div class="text-center">
+            <h6 class="register" (click)="alreday()"> already have an account!</h6>
+         </div>
+      </div>
+   </div>
+  </ion-content>

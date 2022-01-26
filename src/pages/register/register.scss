@@ -1,0 +1,74 @@
+page-register {
+     
+    ion-content {
+        background: white;
+       
+        .banner {
+          position: relative;
+      
+          .caption {
+            position: absolute;
+            width: 100%;
+            bottom: 55px;
+            font-size: 26px;
+            color: white;
+            padding-left: 26px;
+            padding-right: 26px;
+          }
+      
+          .reg {
+            position: absolute;
+            bottom: -260px !important;
+            width: calc(100% - 52px);
+            background-color: white;
+           /* background: url('../assets/img/background2.png') no-repeat white;
+            background-size: cover;*/
+            margin: 16px 26px 16px 26px;
+            padding: 5px 16px 5px 16px;
+            border-radius: 10px;
+            box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.16);
+            img {
+                width: 30%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+              }
+            .register {
+                 color: grey;
+                 font-size: 13px;
+                 text-align: center;
+                }
+            .left{
+      
+              float:left;
+              font-size: 20px;
+              font-weight: bold;
+            }
+            .right{float:right;
+                   width:60%;}
+            
+            .itemform {
+                margin-bottom: 10px !important;
+                border-radius: 5px !important;
+                padding-left: 30px !important;
+                padding-right: 30px;
+                font-size: 0.9em;
+                border: 1px solid grey;
+                background: rgb(255,255,255);
+                height: 10%;
+               
+            }
+            .error-txt{
+                color :red;
+                font-size: 12px;
+                }
+          }
+        }
+
+    } 
+}
+
+
+    
+
+

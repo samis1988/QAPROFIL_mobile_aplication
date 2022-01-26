@@ -1,0 +1,94 @@
+<!--
+  Generated template for the TbarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> <b>T- Bar Suspension System </b></ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content padding>
+
+  <ion-navbar>
+    <ion-slides paginationClickable=true initialSlide=0 loop=true autoplay=1000 speed=3000 #mySlider>
+
+      <ion-slide *ngFor="let item of elenco">
+        <ion-item class="itemPosicao" color="dark">
+          {{item.posicao}}
+        </ion-item>
+        <img src="{{item.img}}" #myImage (click)="presentImage(myImage)">
+        <ion-item color="primary">
+          {{item.nome}}
+        </ion-item>
+      </ion-slide>
+    </ion-slides>
+
+    <div class="swiper-button-next" (click)="slideNext()"></div>
+    <div class="swiper-button-prev" (click)="slidePrev()"></div>
+
+  </ion-navbar>
+
+
+  <ion-card-content>
+    <p>
+      <font face="Times New Roman" color="black" size="4">* Customise your product :</font>
+    </p>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>T-Bar Cross-T 60 Section</ion-label>
+        <ion-checkbox [(ngModel)]="product1" (click)="producOne($event)"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>T-Bar Cross-T 120 Section</ion-label>
+        <ion-checkbox [(ngModel)]="product2" (click)="producTwo($event)"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>T-Bar Main-T 360 Section</ion-label>
+        <ion-checkbox [(ngModel)]="product3" (click)="producThree($event)"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Colors</ion-label>
+        <ion-select [(ngModel)]="color" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let color of colors" value="{{color.code}}">{{color.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Width</ion-label>
+        <ion-select [(ngModel)]="width" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let width of widths" value="{{width.value}}">{{width.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thickness</ion-label>
+        <ion-select [(ngModel)]="thicknes" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let t of thinkness" value="{{t.value}}">{{t.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item no-lines class="itemform">
+        <ion-label>Qty</ion-label>
+        <ion-input class="inputClass" id="quantity" name="quantity" type="number" [(ngModel)]="quantity" required="true" clearInput=true min="0"
+           placeholder="Enter a quantity ...">
+        </ion-input>
+     </ion-item>
+    </ion-list>
+  </ion-card-content>
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="addToCart()">
+      <ion-icon name="cart"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

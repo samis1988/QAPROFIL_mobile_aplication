@@ -1,0 +1,55 @@
+<ion-header no-border>
+
+  <ion-navbar color="danger" no-border>
+    <ion-title color="white">{{ 'SIGNUP_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<!-- (submit)="doSignup()"-->
+
+
+<ion-content>
+  <ion-content [fullscreen]="true" class="back">
+    <div class="banner">
+      <img src="../assets/img/banner.svg" />
+
+      <div class="search">
+        <div class= "text-center">   
+           <img src="../assets/img/logo.png">  
+        </div>
+        <form  [formGroup]="exampleForm">
+          <ion-list  no-lines padding>
+      
+            <ion-item  no-lines class="itemform">
+              <ion-input type="email"  formControlName="email"  placeholder="{{ 'EMAIL' | translate }}" required></ion-input>
+            </ion-item>
+            <ion-row *ngIf="exampleForm.controls.email.invalid && exampleForm.controls.email.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid email</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <ion-item  no-lines class="itemform">
+              <ion-input type="password"  formControlName="password" placeholder="{{ 'PASSWORD' | translate }}" required></ion-input>
+            </ion-item>
+            <ion-row *ngIf="exampleForm.controls.password.invalid && exampleForm.controls.password.dirty">
+              <ion-col>
+                <span class="error-txt">Please enter a valid password</span>
+              </ion-col>
+            </ion-row>
+            <p></p>
+            <div no-lines>
+              <button ion-button color="primary" block [disabled]="exampleForm.invalid" (click)="doSignup()">{{ 'SIGNUP_BUTTON' | translate }}</button>
+            </div>
+      
+          </ion-list>
+        </form> 
+        <div class= "text-center">   
+          <h6 class="register"> Dont you have an account! register now</h6>
+       </div>
+      </div>
+    </div>
+</ion-content>

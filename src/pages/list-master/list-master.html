@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <table>
+      <tr>
+        <td>
+          <ion-buttons right end>
+            <button ion-button icon-only (click)="startApp('WelcomePage')">
+              <b>
+                <ion-icon color="white" name="md-arrow-back"></ion-icon>
+              </b>
+            </button>
+          </ion-buttons>
+        </td>
+        <td>
+
+          <ion-title> <b>Products</b></ion-title>
+
+        </td>
+
+
+
+      </tr>
+    </table>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div id="list">
+    <ion-card *ngFor="let p of pages">
+      <ion-list no-lines (click)="goToSecond(p.component)">
+        <ion-item no-padding>
+
+
+          <img class="cover" src="{{p.image}}">
+
+
+          <div text-center>
+            <h4 class="description">{{p.title}}</h4>
+            <button ion-button outline> Discover</button>
+          </div>
+
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
