@@ -1,0 +1,16 @@
+
+<ion-content class="ion-padding masters">
+  <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)" #slideWithNav>
+    <ion-slide class="ion-padding" *ngFor="let slide of slides">
+      <div class="navigator">
+      </div>
+      <img [src]="slide.image" >
+      <div class="navig">
+       
+        <button ion-button color="primary" clear (click)="slideWithNav.slideNext()" [disabled]="slide.isend">NEXT</button>
+        <button ion-button color="primary" clear (click)="startApp()">{{ 'TUTORIAL_SKIP_BUTTON' | translate}}</button>
+      </div>
+      
+    </ion-slide>
+  </ion-slides>
+</ion-content>

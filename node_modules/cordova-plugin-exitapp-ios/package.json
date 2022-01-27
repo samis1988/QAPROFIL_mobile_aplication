@@ -1,0 +1,16 @@
+{
+    "name": "cordova-plugin-exitapp-ios",
+    "version": "0.0.2",
+    "description": "Implements navigator.app.exitApp on iOS",
+    "license": "Apache 2.0",
+    "cordova": {
+        "id": "cordova-plugin-exitapp-ios",
+        "platforms": [
+            "ios"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maitscha/cordova-plugin-exitapp-ios.git"
+    }
+}

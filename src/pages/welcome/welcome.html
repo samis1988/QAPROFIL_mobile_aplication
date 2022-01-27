@@ -1,0 +1,93 @@
+<ion-header no-border>
+  <ion-toolbar color="primary" no-border>
+  <div class="row">
+    <button ion-button clear left>
+      <button ion-button clear menuToggle>
+        <img src="../assets/img/menu.svg" />
+      </button>
+    </button>
+
+    <ion-title>
+      Qaprofil
+    </ion-title>
+
+    <button ion-button clear right class="rightbuttom">
+      <button ion-button clear (click)="cart()">
+        <ion-icon class="set" ios="ios-cart" md="md-cart"></ion-icon>
+      </button>
+    </button>
+  </div>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true" class="back">
+  <div class="banner">
+    <img src="../assets/img/banner.svg" />
+
+    <div class="caption ion-padding">
+      Discover our large<br>
+      set of products
+    </div>
+
+    <div class="search" (click)="goToSecond('about')">
+      
+      
+        <h2 class="left"> About</h2>
+    </div>
+  </div>
+
+  <div class="title">
+    <h2>Products</h2>
+
+    
+  </div>
+
+  <div class="event-slider">
+    <ion-slides  class="default-left-padding" #slides>
+      <ion-slide *ngFor="let p of products" (click)="goToSecond(p.component)">
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header no-padding>
+              <img src="{{p.image}}" />
+            </ion-card-header>
+
+            <ion-card-content class="back">
+              
+              <h2 class="eventname">{{p.title}}</h2>
+             
+
+             
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+     
+    </ion-slides>
+  </div>
+
+  <div class="default-top-padding title">
+    <h2>Youtube Videos</h2>
+  </div>
+
+  <div class="live-event">
+    <img src="../assets/events/ev3.png" />
+
+    <div class="info">
+      <div class="content">
+        <h6>Youtube Video</h6>
+
+        <p class="stats">
+          <span><ion-icon name="eye"></ion-icon>&nbsp;2.3K</span><span><ion-icon name="heart"></ion-icon>&nbsp;3758</span>
+        </p>
+
+        <p class="location"><ion-icon name='location'></ion-icon>Middle east, Qatar</p>
+
+      </div>
+
+      <div class="indicator" (click)="goToSecond('Youtube Video')">
+        <div>watch</div>
+      </div>
+    </div>
+  </div>
+</ion-content>

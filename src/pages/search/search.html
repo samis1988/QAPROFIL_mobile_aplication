@@ -1,0 +1,38 @@
+<ion-header no-border>
+  <ion-navbar color="primary" no-border>
+    <table>
+      <tr>
+        <td>
+          <ion-buttons right end>
+            <button ion-button icon-only (click)="goToSecond('WelcomePage')">
+              <b>
+                <ion-icon color="white" name="md-arrow-back"></ion-icon>
+              </b>
+            </button>
+          </ion-buttons>
+        </td>
+        <td>
+          <ion-title>
+            <font face="Cambria" color="white" size="4"> <b>{{ 'SEARCH_TITLE' | translate }}</b></font>
+          </ion-title>
+        </td>
+      </tr>
+    </table>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Items"></ion-searchbar>
+  </div>
+  <ion-list>
+    <button ion-item (click)="goToSecond(item.about)" *ngFor="let item of currentItems">
+      <ion-avatar item-start>
+        <img [src]="item.profilePic" />
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+
+      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+    </button>
+  </ion-list>
+</ion-content>

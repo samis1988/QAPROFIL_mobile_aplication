@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="primary">
+   
+
+          <ion-title>
+            <h4 face="Cambria">Contacts</h4>
+          </ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="salon-detail">
+  <ion-card text-wrap>
+
+    <img src="../assets/img/Qaprofil.jpg" alt="chouchouimage">
+
+
+    <ion-item-group>
+      <ion-item lines="none">
+        <h2 class="titl">QAPROFIL</h2>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon color="danger" ios="ios-compass" md="md-compass"></ion-icon>
+        P.O. Box 304: Doha Qatar New Industrial Area
+      </ion-item>
+      <ion-item lines="none"
+        (click)="openExternalUrl('https://www.google.com/maps/place/Qatar+Profiles+and+False+Ceilings+Factory/@25.1522135,51.4037525,15z/data=!4m5!3m4!1s0x0:0x9f2059796b4c5580!8m2!3d25.1522135!4d51.4037525', '_system', 'location=yes')">
+        <ion-icon color="danger" ios="ios-navigate" md="md-navigate"></ion-icon>
+        show map
+      </ion-item>
+      <ion-item lines="none" class="stars">
+        <ion-icon color="danger" ios="ios-star" md="md-star"></ion-icon>
+
+        5.0 Great
+
+      </ion-item>
+
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+      </ion-item-divider>
+      <ion-item lines="none" (click)="makeCall('+97444601734')">
+        <ion-icon color="danger" ios="ios-call" md="md-call"></ion-icon>
+        0097444601734
+      </ion-item>
+      <ion-item lines="none" (click)="sendEmail()">
+        <ion-icon color="danger" ios="ios-mail" md="md-mail"></ion-icon>
+        info@qaprofil.com.qa
+      </ion-item>
+      <ion-item lines="none" (click)="openExternalUrl('https://qaprofil.com.qa/')">
+        <ion-icon color="danger" ios="ios-globe" md="md-globe"></ion-icon>
+        qaprofil.com.qa
+      </ion-item>
+    </ion-item-group>
+  </ion-card>
+
+
+</ion-content>

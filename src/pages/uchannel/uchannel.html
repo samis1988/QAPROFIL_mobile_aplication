@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> <b>Prepainted U Channel</b></ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <ion-card-content>
+    <img src="assets/img/qaprofil/u_channel.png" #myImage (click)="presentImage(myImage)" />
+    <p><font face="Times New Roman" color="black" size="3">Item's Name:</font> <font   face="Arial Black" color="black" size="3"> Prepainted U Channel</font></p> 
+    <p><font face="Times New Roman" color="black" size="3">Item's Code:</font> <font   face="Arial Black" color="black" size="3">QSGPA18-3-40MW</font></p> 
+     
+    <p><font face="Times New Roman" color="black" size="3">Prepainted U Channel : A prepainted U shaped profile fixed on the  perimeter of  the walls of the designated area as a leveling system into which the edges of Aluminum Strips are fixed .</font></p> 
+    <p>
+      <font face="Times New Roman" color="black" size="4">* Customise your product :</font>
+    </p>
+    <ion-list>
+      <ion-item>
+        <ion-label>Colors</ion-label>
+        <ion-select [(ngModel)]="color" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let color of colors" value="{{color.code}}">{{color.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Width</ion-label>
+        <ion-select [(ngModel)]="width" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let width of widths" value="{{width.value}}">{{width.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thickness</ion-label>
+        <ion-select [(ngModel)]="thicknes" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let t of thinkness" value="{{t.value}}">{{t.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item no-lines class="itemform">
+        <ion-label>Qty</ion-label>
+        <ion-input class="inputClass" id="quantity" name="quantity" type="number" [(ngModel)]="quantity" required="true" clearInput=true min="0"
+           placeholder="Enter a quantity ...">
+        </ion-input>
+     </ion-item>
+    </ion-list>
+  </ion-card-content>
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="addToCart()">
+      <ion-icon name="cart"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+

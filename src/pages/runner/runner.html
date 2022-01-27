@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> <b>Runner</b></ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <img   src="assets/img/qaprofil/runner.png" #myImage (click)="presentImage(myImage)"/> 
+        
+  <ion-card-content *ngIf="!isValid">
+  
+             
+      <p><font face="Times New Roman" color="black" size="3">Item's Name:</font> <font   face="Arial Black" color="black" size="3"> Runner  </font></p> 
+      <p><font face="Times New Roman" color="black" size="3">Item's Code:</font> <font   face="Arial Black" color="black" size="3"> QSGR48</font></p> 
+     
+       
+      <p><font face="Times New Roman" color="black" size="3">Runner : Fixed to the ground and ceilings to support the studs to form the partition.</font></p> 
+      <p><font face="Times New Roman" color="black" size="4">* Customized lengths are available :</font> </p> 
+     
+       <p><font face="Times New Roman" color="black" size="3">- Width / mm :</font> <font   face="Arial Black" color="black" size="3">48 - 150  </font></p> 
+      
+      <p><font face="Times New Roman" color="black" size="3">- Thickness  / mm :</font> <font   face="Arial Black" color="black" size="3"> 0.45 - 0.6  </font></p> 
+      <p><font face="Times New Roman" color="black" size="3">- Length / mm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </font> <font   face="Arial Black" color="black" size="3"> 3000 </font></p> 
+        
+       
+
+        
+       
+        
+  </ion-card-content>
+  
+        
+  <ion-card-content *ngIf="isValid">
+    <p><font face="Times New Roman" color="black" size="3">Item's Name:</font> <font   face="Arial Black" color="black" size="3"> Runner  </font></p> 
+    <p><font face="Times New Roman" color="black" size="3">Item's Code:</font> <font   face="Arial Black" color="black" size="3"> QSGR48</font></p> 
+   
+     
+    <p><font face="Times New Roman" color="black" size="3">Runner : Fixed to the ground and ceilings to support the studs to form the partition.</font></p> 
+      
+    <p>
+      <font face="Times New Roman" color="black" size="4">* Customise your product :</font>
+    </p>
+    <ion-list>
+      <ion-item>
+        <ion-label>Colors</ion-label>
+        <ion-select [(ngModel)]="color" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let color of colors" value="{{color.code}}">{{color.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Width</ion-label>
+        <ion-select [(ngModel)]="width" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let width of widths" value="{{width.value}}">{{width.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thickness</ion-label>
+        <ion-select [(ngModel)]="thicknes" cancelText="cancel" okText="Ok">
+          <ion-option *ngFor="let t of thinkness" value="{{t.value}}">{{t.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item no-lines class="itemform">
+        <ion-label>Qty</ion-label>
+        <ion-input class="inputClass" id="quantity" name="quantity" type="number" [(ngModel)]="quantity" required="true" clearInput=true min="0"
+           placeholder="Enter a quantity ...">
+        </ion-input>
+     </ion-item>
+    </ion-list>
+  </ion-card-content>
+  <ion-fab right bottom *ngIf="isValid">
+    <button ion-fab color="secondary" (click)="addToCart()">
+      <ion-icon name="cart"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+
